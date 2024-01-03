@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "tryton-analyzer"
+version = "0.1.0"
+description = "A language server / linter for the Tryton framework"
+authors = ["Jean Cavallo <jean.cavallo@hotmail.fr>"]
+readme = "README.md"
+license = "MIT"
+packages = [{include = "tryton_analyzer"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+pygls = "^1.0.0"
+libcst = "^0.4.9"
+lxml = "^4.9.1"
+
+[tool.poetry.scripts]
+tryton-ls = 'tryton_analyzer.tryton_ls:run'
+tryton-lint = 'tryton_analyzer.tryton_lint:run'
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "*"
+flake8-debugger = "*"
+flake8-pytest-style = "*"
+isort = "*"
+mypy = "*"
+pep8-naming = "*"
+pyupgrade = "*"
+bandit = "*"
+pip-audit = "*"
+black = "*"
+python-language-server = {version = "*", extras = ["all"]}
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+pytest-cov = "*"
+trytond = { git = "https://github.com/jcavallo/tryton-core", branch = "db_less_pools_68", subdirectory = "trytond" }
+unidecode = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.black]
+line-length = 79
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.mypy]
+python_version = 3.11
+ignore_missing_imports = true
+disallow_untyped_defs = true
+exclude = "tests/sample_module"

@@ -1,0 +1,29 @@
+<tryton>
+    <record model="ir.ui.view" id="clause_view_list"/>
+    <data>
+        <record model="res.user" id="whatever"/>
+        <record model="ir.ui.view">
+        </record>
+        <record model="ir.ui.view" id="some_id">
+            <field name="model">res.user</field>
+            <field name="whatever">...</field>
+        </record>
+        <record model="ir.ui.view" id="some_id">
+            <field name="model">author</field>
+        </record>
+    </data>
+    <data depends="res">
+        <record model="res.user" id="whatever2"/>
+        <!-- Check that same line ignores work -->
+        <record model="res.user"/> <!-- IGNORE-TRYTON-LS-5003 -->
+        <!-- Check that previous line ignores work -->
+        <!-- IGNORE-TRYTON-LS-5003 -->
+        <record model="res.user"/>
+        <record model="res.user"/>
+        <record model="ir.ui.view" id="for_override">
+            <field name="model">res.user</field>
+            <field name="type">tree</field>
+            <field name="name">test_view</field>
+        </record>
+    </data>
+</tryton>
