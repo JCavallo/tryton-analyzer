@@ -12,8 +12,10 @@ are not, which leads to runtime / production errors.
 
 ## Disclaimer
 
-This is just a hobby project for now, and though it is already useful, it
-requires a patched trytond (on version 6.8).
+This is just a hobby project for now, and though it is already useful, it uses
+a patched trytond (on version 6.8).
+
+It requires python 3.11.
 
 It is only tested on Neovim, though it should work on other editors supporting
 the Language Server Protocol.
