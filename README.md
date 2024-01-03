@@ -53,6 +53,15 @@ trauma :)
 - Do not call super on a function without a parent
 - Forgetting a super call
 
+Screenshots:
+
+![Test module diagnostics 1](/doc/images/sample_module_1.png?raw=true)
+![Test module diagnostics 2](/doc/images/sample_module_2.png?raw=true)
+![Test module diagnostics 3](/doc/images/sample_module_3.png?raw=true)
+![Test module diagnostics 4](/doc/images/sample_module_4.png?raw=true)
+![Test module diagnostics 5](/doc/images/sample_module_5.png?raw=true)
+![Test module completion](/doc/images/sample_module_completion.png?raw=true)
+
 ## What will it do
 
 I have a lot of things I would like to do next:
